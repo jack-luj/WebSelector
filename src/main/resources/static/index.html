@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+  $("button").click(function(){
+  var reqUrl=$("#url").val();
+  var reqRule=$("#rule").val();
+  //alert("数据：" + reqUrl + "\n状态：" + reqRule);
+    $.get("/api/parse"+"?url="+reqUrl+"&rule="+reqRule,function(data,status){
+       $("#result").val(data);
+    });
+  });
+});
+</script>
+</head>
+<body>
+<input placeholder="网址" type="text" size="150" id="url"><br>
+<input placeholder="提取规则" type="text" size="150" id="rule"><br>
+<button>解析</button><br>
+<textarea id="result" rows="40" cols="150">
+
+</textarea>
+</body>
+</html>
