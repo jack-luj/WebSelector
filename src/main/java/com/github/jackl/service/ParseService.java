@@ -24,4 +24,16 @@ public class ParseService {
         }
         return re;
     }
+
+    public String hold(int seconds){
+        seconds=seconds<0?0:seconds;
+        try {
+            Thread.sleep(seconds * 1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        String[] error = "error".split("AA");
+        //System.out.println(error[2]);
+        return "ok:"+System.currentTimeMillis();
+    }
 }

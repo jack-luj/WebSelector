@@ -1,0 +1,8 @@
+server.port: 9999 # Server HTTP port.
+
+# Logging level (TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
+logging:
+    level:
+        org.hibernate: WARN
+        org.springframework: WARN
+    file: web.log
